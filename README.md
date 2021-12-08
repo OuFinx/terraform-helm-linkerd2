@@ -15,7 +15,7 @@ You can find desired example in examples folder.
 
 ```
 module "linkerd2" {
-  source = "OuFinx/linkerd2/kubernetes"
+  source = "OuFinx/linkerd2/helm"
 
   # The Linkerd-Viz extension contains observability and visualization components for Linkerd.
   viz_create = true
