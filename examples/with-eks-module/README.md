@@ -1,7 +1,8 @@
-# ----------------------------------------
-# Create EKS Cluster
-# ----------------------------------------
+# Production deployment
 
+This deployment allows Linkerd2 to be deployed to the cluster after the cluster has been deployed.
+
+```
 data "aws_eks_cluster" "eks" {
   name = module.eks.cluster_id
 }
@@ -32,10 +33,6 @@ module "eks" {
   ]
 }
 
-# ----------------------------------------
-# Create Linkerd
-# ----------------------------------------
-
 provider "helm" {
   kubernetes {
     host                   = module.eks.cluster_endpoint
@@ -50,3 +47,4 @@ module "linkerd2" {
   # The Linkerd-Viz extension contains observability and visualization components for Linkerd.
   viz_create = true
 }
+```
